@@ -10,6 +10,7 @@ class ScanListState with ChangeNotifier {
     final int id = await DBState.db.nuevoScan(nuevoScan);
     // asignamos el id de l bd al modelo
     nuevoScan.id = id;
+    // nuevoScan.fecha = DateTime.now();
     if (this.tipoSeleccionado == nuevoScan.tipo) {
       this.scans.add(nuevoScan);
       notifyListeners();

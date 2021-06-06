@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scanner/colors.dart';
 import 'package:scanner/pages/home.dart';
 import 'package:scanner/pages/mapa.dart';
 import 'package:scanner/services/appstate.dart';
@@ -15,17 +16,18 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => AppState(),
+          create: (_) => AppState()
         ),
         ChangeNotifierProvider(
-          create: (_) => ScanListState(),
+          create: (_) => ScanListState()
         )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Material App',
+        title: 'ScanQr',
         theme: ThemeData(
-          primaryColor: Colors.pink,
+          primaryColor:  Color(MiColor.primary.hex),
+          primarySwatch:  Colors.pink,
           floatingActionButtonTheme:
               FloatingActionButtonThemeData(backgroundColor: Colors.pink),
         ),
